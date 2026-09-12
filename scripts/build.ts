@@ -50,8 +50,14 @@ const reactBundlePath = "dist/react/index.js";
 const reactBundle = await readFile(reactBundlePath, "utf8");
 await writeFile(reactBundlePath, `"use client";\n${reactBundle}`);
 
-const { I18nError } = await import("../dist/index.js");
-const { renderRichText } = await import("../dist/react/index.js");
+// The identity check runs after tsup, but tsc --noEmit type-checks this file
+// before dist/ exists on a fresh checkout (CI runs TYPECHECK before BUILD) —
+// static specifiers would fail to resolve. Computed specifiers keep these
+// runtime-only imports out of static type resolution.
+const distEntries = "../dist/index.js";
+const distReactEntry = "../dist/react/index.js";
+const { I18nError } = await import(distEntries);
+const { renderRichText } = await import(distReactEntry);
 let thrown: unknown;
 try {
   // `as string` widens past the literal-template renderer-completeness check —
