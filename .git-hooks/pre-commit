@@ -1,0 +1,6 @@
+#!/bin/sh
+# Pre-commit gate: tsc → oxlint → biome → eslint → jscpd → knip → test → build.
+# All stages fail on warnings, not just errors (oxlint --deny-warnings,
+# biome --error-on-warnings, eslint --max-warnings 0, jscpd threshold 0, knip).
+# PACKAGE (publint/attw) is skipped — it packs the library, pointless per commit.
+exec bun run quality-gate --skip=PACKAGE --readonly

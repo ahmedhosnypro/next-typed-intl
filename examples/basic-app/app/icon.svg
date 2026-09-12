@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="9" fill="url(#g)"/>
+  <!-- "ti" wordmark: Inter Bold glyph outlines (upem 2048, natural advance) -->
+  <g transform="translate(8.17 25.34) scale(0.012 -0.012)" fill="#ffffff">
+    <path d="M683 1118V889H20V1118ZM174 1384H474V327Q474 274 497.5 248.5Q521 223 576 223Q593 223 624 227.5Q655 232 671 236L714 11Q664 -4 614.5 -10Q565 -16 520 -16Q352 -16 263 66Q174 148 174 301Z"/>
+    <g transform="translate(750 0)">
+      <path d="M128 0V1118H428V0ZM278 1264Q210 1264 162 1309Q114 1354 114 1418Q114 1482 162 1527Q210 1572 278 1572Q346 1572 394.5 1527.5Q443 1483 443 1418Q443 1354 394.5 1309Q346 1264 278 1264Z"/>
+    </g>
+  </g>
+</svg>
